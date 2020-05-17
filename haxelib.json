@@ -1,7 +1,11 @@
 {
 	"name": "tode",
+	"description":  "2D based game engine",
 	"classPath": "Sources",
+	"url" : "https://github.com/lewislepton/tode",
+	"contributors" : ["lewislepton"],
 	"dependencies": {
     "nape-haxe4": ""
-  }
+	},
+	"tags": ["game", "nape", "tode", "tiled"]
 }
