@@ -1,0 +1,7 @@
+{
+	"name": "tode",
+	"classPath": "Sources",
+	"dependencies": {
+    "nape-haxe4": ""
+  }
+}
