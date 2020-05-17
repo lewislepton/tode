@@ -31,6 +31,7 @@ My only main requirement is how the code looks. Things have to be simple & kept 
 - [ ] BIG possibility to change the collision & physics to something way faster & less cumbersome. Hey, i love you nape. But damn you can be slow to work with 😅
 - [ ] Support for other tile based level editors, like OGMO & Tilesetter. Tiled should be done first 😉
 - [ ] Comment the code. So it helps other people than myself
+- [ ] Major series of other things i cant think of right now
 - [ ] Make a better front page for this repo that doesnt have me waffling. Also an icon. Everyone loves icons 😘
 
 [Lewis Lepton](https://lewislepton.com)
