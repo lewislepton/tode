@@ -36,4 +36,4 @@ My only main requirement is how the code looks. Things have to be simple & kept 
 
 [Lewis Lepton](https://lewislepton.com)
 
-*This engine includes some things from other libraries & works that others have put up, such as the TMX stuff. But is only included inside the engine to cut out the need of more downloading from other sources*
+*This engine includes some things from other libraries & works that others have put up, such as the TMX stuff. But is only included inside the engine to cut out the need of more downloading from other sources. I dont take credit for these works, but i do edit them a lot to make sure things work the way they should 😘*
