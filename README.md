@@ -18,6 +18,10 @@ To install **tode**, head to your terminal/command line & input this
 
 BOOSH. YOU ARE READY!!! 👍
 
+# Bugs
+
+- [ ] a bug with using xml/tmx. seems to duplicate things if we have other maps in other states. gonna work on a fix. but it is usable 😅
+
 # Wanna Help?
 
 Im not killing myself about getting X or Y feature in, its all about having fun & making something nice in a time you want to. But if you would like to help, then by all means spooge commits all over me 😘
