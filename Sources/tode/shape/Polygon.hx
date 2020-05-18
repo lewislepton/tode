@@ -26,10 +26,12 @@ import tode.World;
 
 import tode.Object;
 
+// CURRENTLY WORKING BUT ALSO NOT WORKING. SHAPES LOAD WHEN USING TILED. BUT DOESNT HAVE POLYGONS ALLOWED FOR NOW
+// NEEDS WORK, COME ON LEWIS FIX IT
+
 class Polygon extends Object {
   public var width:Float;
 	public var height:Float;
-	public var color:Color = Color.fromFloats(0.6, 0.6, 0.6);
 
 	public var shape:Pol;
 
@@ -52,8 +54,7 @@ class Polygon extends Object {
 	override public function render(canvas:Canvas){
 		super.render(canvas);
 		var pos:Vec2;
-		pos = body.position;    
-    canvas.g2.color = color;
+		pos = body.position;
     canvas.g2.pushTransformation(FastMatrix3.translation(body.position.x, body.position.y));
     canvas.g2.rotate(body.rotation, body.position.x, body.position.y);
     canvas.g2.fillPolygon(0, 0, vert);

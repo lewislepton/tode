@@ -17,8 +17,6 @@ import tode.Scene;
 import nape.space.Space;
 import nape.geom.Vec2;
 
-import Level;
-
 class State extends Scene {
 	
 	public static var activeState:State;
@@ -29,17 +27,14 @@ class State extends Scene {
 	
 	public function new(){
 		super();
-		Level.setup();
 	}
 
 	override public function update(){
 		super.update();
-		Level.update();
 	}
 
 	override public function render(canvas:Canvas){
 		super.render(canvas);
-		Level.render(canvas);
 	}
 
 	public function onKeyDown(keyCode:KeyCode){}

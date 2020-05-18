@@ -29,6 +29,8 @@ class Object {
 	public var active = true;
 
 	public var body:nape.phys.Body;
+
+	public var color:Color = Color.White;
 	
 	public function new(x:Float = 0.0, y:Float = 0.0){
 		this.x = x;
@@ -42,6 +44,7 @@ class Object {
 
 	public function render(canvas:Canvas){
 		if (!active) return;
+		canvas.g2.color = color;
 	}
 
 	public function revive(){

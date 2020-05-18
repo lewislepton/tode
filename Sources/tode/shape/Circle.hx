@@ -35,11 +35,12 @@ class Circle extends Object {
 		shape.body = body;
 		body.shapes.add(shape);
 		body.space = World.space;
-		body.position.x = x;
-		body.position.y = y;
+		body.position.x = x + radius;
+		body.position.y = y + radius;
 	}
 	
 	override public function update(){
+		super.update();
 	}
 
   override public function render(canvas:Canvas){
