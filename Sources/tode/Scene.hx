@@ -14,8 +14,6 @@ import haxe.ds.ArraySort;
 import kha.Canvas;
 import tode.Object;
 
-import Level;
-
 class Scene {
 	public var count(get, null):Int;
 
@@ -23,7 +21,6 @@ class Scene {
   private var _objects:Array<Object>;
 
   public function new(){
-    Level.setup();
     _objects = new Array<Object>();
   }
 
@@ -31,7 +28,6 @@ class Scene {
    * update objects added in scene
    */
   public function update(){
-    Level.update();
     for (entity in _objects) entity.update();
   }
 
@@ -40,7 +36,6 @@ class Scene {
    * @param canvas 
    */
   public function render(canvas:Canvas){
-    Level.render(canvas);
     if (_depth) depth(_objects);
 
     for (entity in _objects) entity.render(canvas);
