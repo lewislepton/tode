@@ -2,7 +2,7 @@
 // Lewis Lepton
 // https://lewislepton.com
 
-package qn;
+package tode;
 
 /*
 @uthor lewis lepton 2018

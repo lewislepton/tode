@@ -18,10 +18,12 @@ class Scene {
 	public var count(get, null):Int;
 
   private var _depth:Bool;
+  public var active:Bool;
   private var _objects:Array<Object>;
 
   public function new(){
     _objects = new Array<Object>();
+    active = true;
   }
 
   /**

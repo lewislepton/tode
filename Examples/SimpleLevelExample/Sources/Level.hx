@@ -17,37 +17,37 @@ import char.Enemy;
 // needs working on
 
 class Level {
-	public static var map:TiledMap;
+	public var map:TiledMap;
 
 	// basic player spawn point - much safer than the other way below, which is not active 😘
-	public static var spawnLayer:TiledObjectGroup;
+	public var spawnLayer:TiledObjectGroup;
 	
-	public static var players:Array<Player>;
-	public static var playersLayer:TiledObjectGroup;
+	public var players:Array<Player>;
+	public var playersLayer:TiledObjectGroup;
 
 	// for generating platforms from the tiled file
-	public static var platforms:Array<Platform>;
-	public static var platformsLayer:TiledObjectGroup;
+	public var platforms:Array<Platform>;
+	public var platformsLayer:TiledObjectGroup;
 
-	public static var polyplatforms:Array<PolyPlatform>;
-	public static var polyplatformsLayer:TiledObjectGroup;
+	public var polyplatforms:Array<PolyPlatform>;
+	public var polyplatformsLayer:TiledObjectGroup;
 
-	public static var enemies:Array<Enemy>;
-	public static var enemiesLayer:TiledObjectGroup;
+	public var enemies:Array<Enemy>;
+	public var enemiesLayer:TiledObjectGroup;
 
-	public static function setup(){
+	public function new(){
 		// simple XML/TMX loader. this can be shorthanded as well & even made possible to hide the files away inside the executable, but there is more to that option 😘
 		map = TiledMap.fromAssets(Assets.blobs.tiledmap_tmx.toString());
 		init();
 	}
 
-	public static function init(){
+	public function init(){
 		setupSpawn();
 		setupPlatform();
 		setupEnemy();
 	}
 
-	public static function update(){
+	public function update(){
 		// updating is good - because it just means if anything gets moved, things are updated
 		for (platform in platforms){
 			platform.update();
@@ -58,7 +58,7 @@ class Level {
 		}
 	}
 
-	public static function render(canvas:Canvas){
+	public function render(canvas:Canvas){
 		// renders the tiles made in Tiled
 		map.render(canvas);
 
@@ -72,20 +72,20 @@ class Level {
 		}
 	}
 
-	public static function clear(){
+	public function clear(){
 		platforms = [];
 		enemies = [];
 	}
 
 	// spawn point - something easy. could be better. but its something to fix the weird multiple hidden objects spawning. so now its a spawn point instead
-	private static function setupSpawn(){
+	private function setupSpawn(){
 		// spawn = [];
 		spawnLayer = map.getObjectGroupByName('spawn');
 	}
 
 	// NEEDS FIXING - SEEMS TO SPAWN MULTIPLES & NEED TO SORT OUT, PLUS BORKS WITH SOME SETTINGS - BUT LUCKILY EVERYTHING ELSE SEEMS FIN [RUNS]... FOR NOW 😘
 	// Player - a very simple setup
-	private static function setupPlayer(){
+	private function setupPlayer(){
 		players = [];
 		playersLayer = map.getObjectGroupByName('player');
 		for (object in playersLayer.objects){
@@ -94,7 +94,7 @@ class Level {
 	}
 	
 	// Platform - kind of like the player but WAY easier
-	private static function setupPlatform(){
+	private function setupPlatform(){
 		platforms = [];
 		platformsLayer = map.getObjectGroupByName('platform');
 		for (object in platformsLayer.objects){
@@ -103,7 +103,7 @@ class Level {
 	}
 
 	// Polygon shapes are currently not working. But this is the type of thing that helps in creating them 😉
-	private static function setupPolyPlatform(){
+	private function setupPolyPlatform(){
 		polyplatforms = [];
 		polyplatformsLayer = map.getObjectGroupByName('polygon');
 		for (object in polyplatformsLayer.objects){
@@ -113,7 +113,7 @@ class Level {
 	}
 
 	// Enemy - much like platform, very easy to setup
-	private static function setupEnemy(){
+	private function setupEnemy(){
 		enemies = [];
 		enemiesLayer = map.getObjectGroupByName('enemy');
 		for (object in enemiesLayer.objects){

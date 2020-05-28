@@ -9,24 +9,22 @@ package tode;
 https://lewislepton.com
 */
 
+// import tode.Listen;
 import kha.Canvas;
 import kha.input.KeyCode;
 
+import tode.Tode;
 import tode.Scene;
 
-import nape.space.Space;
-import nape.geom.Vec2;
-
 class State extends Scene {
-	
-	public static var activeState:State;
-	static var states:Map<String, State>;
-
 	public static var width:Int;
 	public static var height:Int;
+
+	public var created:Bool = false;
 	
 	public function new(){
 		super();
+		created = true;
 	}
 
 	override public function update(){
@@ -57,28 +55,8 @@ class State extends Scene {
 
 	public function onGamepadButton(button:Int, value:Float){}
 
-	public static function setup(){
-		states = new Map<String, State>();
-	}
-
-	public static function addState(name:String, state:State):State {
-		states.set(name, state);
-		return state;
-	}
-
-	// override public function addEntity(object:Group){
-	// 	super.addEntity(object);
-	// }
-
-	// override public function removeComponent(object:Group){
-	// 	super.removeComponent(object);
-	// }
-
-	public static function removeState(name:String){
-		states.remove(name);
-	}
-
-	public static function set(name:String){
-		activeState = states.get(name);
+	public static function set(state:State){
+		Tode.state = state;
+		if (!Tode.state.created) Tode.setup();
 	}
 }
